@@ -31,8 +31,8 @@ function getUserChoice(){
 function gameStart(){
     let computer = getComputerChoice();
     let player = getUserChoice();
-    console.log(computer);
-    console.log(player);
+    //console.log(computer);
+    //console.log(player);
     if(computer == "rock" && player == "rock" ){
         return(gameStart());
     }else if(computer == "rock" && player == "paper" ){
@@ -40,7 +40,7 @@ function gameStart(){
     }else if(computer == "rock" && player == "scissors" ){
         return("you lose");
     }else if(computer == "paper" && player == "paper" ){
-        return( ameStart());
+        return(gameStart());
     }else if(computer == "paper" && player == "rock" ){
         return("you lose");
     }else if(computer == "paper" && player == "scissors" ){
@@ -56,6 +56,23 @@ function gameStart(){
     
 } 
 
+function gameLoop(){
+    let x = 1;
+    let playerscore = 0;
+    let computerscore = 0;
+    while(x <6 ){
+    let result = gameStart();
+    
+    console.log(x);
+    console.log(result);
+    if (result == "you win"){
+        playerscore++;
+    }else{
+        computerscore++;
+    }
+    x++;
+    }console.log("Players score: " + playerscore + " Computer Score: " + computerscore);
+}
 
 //making calls to the random number generator for each if and else if block
 /*function getComputerChoice(){
